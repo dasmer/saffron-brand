@@ -5,22 +5,33 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Saffron Brand Assets</title>
+    <!-- Mixpanel -->
+    <script src="scripts/tracking.js"></script>
+
+    <script type="text/javascript">
+    mixpanel.track("Marketing - View");
+    mixpanel.track_links('#logo-link', 'Marketing - Logo Link Clicked');
+    mixpanel.track_links('#food-poster-link', 'Marketing - Food Poster Link Clicked');
+    mixpanel.track_links('#morning-poster-link', 'Marketing - Morning Poster Link Clicked');
+    mixpanel.track_links('#wordmark-link', 'Marketing - Wordmark Link Clicked');
+    mixpanel.track_links('#all-link', 'Marketing - All Link Clicked');
+    </script>
+
+    <title>Saffron Pop Up - Marketing Materials</title>
   </head>
   <body class="bg-light">
     <div class="container text-center">
       <h1>A Saffron Thread - Pop Up</h1>
 
       <h3>Marketing Materials Download Links</h3>
-      <div class="asset"><a href="assets/logo.png" download>Logo</a></div>
-      <div class="asset"><a href="assets/marketing-food-poster.jpg" download>Food Poster</a></div>
-      <div class="asset"><a href="assets/marketing-morning-at-saffron.pdf" download>Freshness Poster</a></div>
-      <div class="asset"><a href="assets/wordmark.png" download>Wordmark</a></div>
-      <div class="asset"><a href="assets/saffron-popup-marketing.zip" download>All Files (Zipped)</a></div>
+      <div class="asset"><a id="logo-link" href="assets/logo.png" download>Logo</a></div>
+      <div class="asset"><a id="#food-poster-link" href="assets/marketing-food-poster.jpg" download>Food Poster</a></div>
+      <div class="asset"><a id="morning-poster-link" href="assets/marketing-morning-at-saffron.pdf" download>Freshness Poster</a></div>
+      <div class="asset"><a id="wordmark-link" href="assets/wordmark.png" download>Wordmark</a></div>
+      <div class="asset"><a id="all-link" href="assets/saffron-popup-marketing.zip" download>All Files (Zipped)</a></div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
