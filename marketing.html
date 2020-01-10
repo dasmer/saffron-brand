@@ -13,11 +13,13 @@
 
     <script type="text/javascript">
     mixpanel.track("Marketing - View");
-    mixpanel.track_links('#logo-link', 'Marketing - Logo Link Clicked');
-    mixpanel.track_links('#food-poster-link', 'Marketing - Food Poster Link Clicked');
-    mixpanel.track_links('#morning-poster-link', 'Marketing - Morning Poster Link Clicked');
-    mixpanel.track_links('#wordmark-link', 'Marketing - Wordmark Link Clicked');
-    mixpanel.track_links('#all-link', 'Marketing - All Link Clicked');
+
+    function trackDownloadClick(download_trigger) {
+      mixpanel.track(
+        "Download Link Clicked",
+        {"trigger": download_trigger}
+      );
+    }
     </script>
 
     <title>Saffron Pop Up - Marketing Materials</title>
@@ -27,11 +29,11 @@
       <h1>A Saffron Thread - Pop Up</h1>
 
       <h3>Marketing Materials Download Links</h3>
-      <div class="asset"><a id="logo-link" href="assets/logo.png" download>Logo</a></div>
-      <div class="asset"><a id="#food-poster-link" href="assets/marketing-food-poster.pdf" download>Food Poster</a></div>
-      <div class="asset"><a id="morning-poster-link" href="assets/marketing-morning-at-saffron.pdf" download>Freshness Poster</a></div>
-      <div class="asset"><a id="wordmark-link" href="assets/wordmark.png" download>Wordmark</a></div>
-      <div class="asset"><a id="all-link" href="assets/saffron-popup-marketing.zip" download>All Files (Zipped)</a></div>
+      <div class="asset"><a href="assets/logo.png" onclick="trackDownloadClick('logo')" download>Logo</a></div>
+      <div class="asset"><a href="assets/marketing-food-poster.pdf" onclick="trackDownloadClick('food-poster')" download>Food Poster</a></div>
+      <div class="asset"><a href="assets/marketing-morning-at-saffron.pdf" onclick="trackDownloadClick('freshness-poster')" download>Freshness Poster</a></div>
+      <div class="asset"><a href="assets/wordmark.png" onclick="trackDownloadClick('wordmark')" download>Wordmark</a></div>
+      <div class="asset"><a href="assets/saffron-popup-marketing.zip" onclick="trackDownloadClick('all')" download>All Files (Zipped)</a></div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
